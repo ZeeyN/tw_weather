@@ -1,0 +1,98 @@
+<?xml version="1.0" ?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">current_weather_index_listing.current_weather_index_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <spinner>current_weather_index_columns</spinner>
+        <deps>
+            <dep>current_weather_index_listing.current_weather_index_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="current_weather_index_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">entity_id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <dataProvider name="current_weather_index_listing_data_source" class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <settings>
+            <sticky>true</sticky>
+        </settings>
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <filters name="listing_filters"/>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="current_weather_index_columns">
+        <selectionsColumn name="ids">
+            <settings>
+                <indexField>entity_id</indexField>
+            </settings>
+        </selectionsColumn>
+        <column name="temp_c">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Temperature</label>
+            </settings>
+        </column>
+        <column name="humidity">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">humidity</label>
+                <editor>
+                    <editorType>text</editorType>
+                    <validation>
+                        <rule name="required-entry" xsi:type="boolean">false</rule>
+                    </validation>
+                </editor>
+            </settings>
+        </column>
+        <column name="wind_kph">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Wind speed</label>
+                <editor>
+                    <editorType>text</editorType>
+                    <validation>
+                        <rule name="required-entry" xsi:type="boolean">false</rule>
+                    </validation>
+                </editor>
+            </settings>
+        </column>
+        <column name="wind_dir">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">wind direction</label>
+                <editor>
+                    <editorType>text</editorType>
+                    <validation>
+                        <rule name="required-entry" xsi:type="boolean">false</rule>
+                    </validation>
+                </editor>
+            </settings>
+        </column>
+        <column name="updated_at">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">updated at</label>
+                <editor>
+                    <editorType>text</editorType>
+                    <validation>
+                        <rule name="required-entry" xsi:type="boolean">false</rule>
+                    </validation>
+                </editor>
+            </settings>
+        </column>
+    </columns>
+</listing>

@@ -1,0 +1,28 @@
+<?php
+/** @var $block \Magento\Framework\View\Element\Template */
+$viewModel = $block->getData("view_model");
+?>
+<?php if ($viewModel->isEnabled()) : ?>
+    <div class="weather-wrapper">
+            <ul class="weather-container" data-bind="scope: 'weather-scope'">
+                <li data-bind="text: customSection().temp_c" ></li>
+                <li data-bind="text: customSection().humidity" ></li>
+                <li data-bind="text: customSection().wind_dir" ></li>
+                <li data-bind="text: customSection().wind_kph" ></li>
+            </ul>
+
+        </div>
+    <script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "weather-scope": {
+                        "component": "TestWork_CurrentWeather/js/onload"
+                       }
+                }
+            }
+        }
+    }
+    </script>
+<?php endif; ?>

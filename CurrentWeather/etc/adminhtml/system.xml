@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="weather_settings" translate="label" sortOrder="200">
+            <label>Weather Settings</label>
+        </tab>
+        <section id="weather_config" translate="label" type="text" sortOrder="40" showInDefault="1">
+            <label>Weather api settings</label>
+            <tab>weather_settings</tab>
+            <resource>Magento_Config::weather_settings</resource>
+            <group id="settings" translate="label" type="text" sortOrder="90" showInDefault="1">
+                <label>API Settings</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled weather module</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="url" translate="label comment" type="text" sortOrder="10" showInDefault="1">
+                    <label>API url</label>
+                </field>
+                <field id="key" translate="label comment" type="obscure" sortOrder="20" showInDefault="1"
+                       canRestore="1">
+                    <label>API secret Key</label>
+                </field>
+                <field id="city_name" translate="label comment" type="text" sortOrder="10" showInDefault="1">
+                    <label>City Name</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

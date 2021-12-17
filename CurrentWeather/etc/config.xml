@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <weather_config>
+            <settings>
+                <enabled>1</enabled>
+                <url>http://api.weatherapi.com/v1/current.json?</url>
+                <key>f54ed7d6214c4bc89f074406211712</key>
+                <city_name>Lublin</city_name>
+            </settings>
+        </weather_config>
+    </default>
+</config>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="TestWork_CurrentWeather::css/style.css"/>
+    </head>
+    <body>
+    <referenceContainer name="footer-container">
+        <referenceContainer name="footer-container">
+            <block  name="current_weather"  template="TestWork_CurrentWeather::weather.phtml" before="-">
+                <arguments>
+                    <argument
+                        name="view_model"
+                        xsi:type="object">TestWork\CurrentWeather\ViewModel\Weather</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </referenceContainer>
+</body>
+</page>
